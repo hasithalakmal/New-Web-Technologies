@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Advance Web</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="Basic index page for my web assignment" />
+		<meta name="keywords" content="Web Assignment,Advance Web,2012cs077" />
+		<meta name="author" content="Hasitha lakmal" />
+	    <link rel="shortcut icon" href="images/logo1.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/BGStyle.css" />
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+        
+	</head>
+	<body>
+		<div class="container">
+			<header>
+                <img class="sitelogo1" src="images/logo.png" alt="no image" />	
+                <img class="sitelogo2" src="images/logo.png" alt="no image" />	
+				<h1><span>Crazy Cars</span> collection</h1>   		
+				<h2>Hasitha Lakmal Gamage</h2>
+			<nav class="Menu1">
+                      <hr />
+					<a href="index.html">Home</a>
+					<a href="AboutUS.html">About Us</a>
+					<a class="Current-Menu1" href="LocationUs.html">Location</a>
+
+                    <a href="CarGalery.html">Vedio Galery</a>
+                    <a href="CarSerch.html">Serch</a>
+
+                    <a href="SignUp.html">Sign Up</a>
+                    <a href="Login.html">Sign In</a>
+                     <hr />
+				</nav>
+			</header>
+           <h2 id="welcome_user">Hello User!!!</h2>
+           <section>
+                
+           </section>
+			<div id="map-canvas"></div>
+            <div style="background-color: lightgreen;">
+                <h2 style="color: yellow; text-align: center; background: blue;">This is my home place.....</h2>
+                <address style="text-align: center;">192/13 A, Dehiwela road,Borelesgamuwe.</address>
+                <p style="text-align: center; color: black;">077-5829738/0756780065</p>
+            </div>
+            <div >
+                <div style="background-color: lightgreen; text-align: center;">
+                    <h2 style="color: yellow; text-align: center; background: blue;">Click here to get your path....</h2>
+                    <button onclick="getLocation();" style="padding: 10px;">Get Your Place</button>
+                    <input type="button" id="routebtn" value="Get Path" style="padding: 10px;" />
+                    <p id="demo" style="color: black; padding: 30px;"></p>
+                </div>
+                <div id="map-canvas2" ></div>
+            </div>
+
+          </div>  
+        <footer>
+                Gamage Hasitha Lakmal @Advance_Web_Development-2015
+        </footer>
+         
+    </body>
+   
+	<script type="text/javascript">
+		var output =document.getElementById("welcome_user");
+         if( sessionStorage.username ){
+            output.innerHTML = 'You are welcome to the crazy car ....  ' + sessionStorage.username;
+         }else{
+            output.innerHTML = 'Hello User!!!';
+         }
+        
+      </script>
+      
+       <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script>
+        function initialize() {
+          var myLatlng = new google.maps.LatLng(7.2905715,80.63372619999996);
+          var mapOptions = {
+            zoom: 15,
+            center: myLatlng
+          }
+          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: 'Hello World!'
+          });
+        }
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+    
+        <script>
+            function mapLocation() {
+                  var directionsDisplay;
+                  var directionsService = new google.maps.DirectionsService();
+                  var map;
+                
+                function initialize1() {
+                    directionsDisplay = new google.maps.DirectionsRenderer();
+                    var crazycar = new google.maps.LatLng(7.2905715, 80.63372619999996);
+                    var mapOptions = {
+                      zoom: 7,
+                      center: crazycar
+                    };
+                    map = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+                    directionsDisplay.setMap(map);
+                    //calcRoute();
+                    google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', calcRoute);
+                  }
+                  
+                  
+                
+                  function calcRoute() {
+                    getLocation();
+                   // var start = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    var start = new google.maps.LatLng(lat, lon);
+                    //var end = new google.maps.LatLng(38.334818, -181.884886);
+                    var end = new google.maps.LatLng(7.2905715, 80.63372619999996);
+                    var request = {
+                      origin: start,
+                      destination: end,
+                      travelMode: google.maps.TravelMode.DRIVING
+                    };
+                    directionsService.route(request, function(response, status) {
+                      if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                        directionsDisplay.setMap(map);
+                      } else {
+                        alert('First click "Get Your Place" button');
+                      }
+                    });
+                  }
+                
+                  google.maps.event.addDomListener(window, 'load', initialize1);
+                }
+                mapLocation();
+    </script> 
+    <script>
+        var x = document.getElementById("demo");
+        var lat;
+        var lon;
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            
+                            navigator.geolocation.getCurrentPosition(showPosition);
+                        } else { 
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+                    
+                    function errorHandler(err) {
+                                if(err.code == 1) {
+                                   alert("Error: Access is denied!");
+                                }else if( err.code == 2) {
+                                   alert("Error: Position is unavailable!");
+                                }
+                             }
+                             
+                    function showPosition(position) {
+                        lat= position.coords.latitude;
+                        lon = position.coords.longitude ;
+                        x.innerHTML = "Latitude: " + lat 
+                        + "<br>Longitude: " + lon
+                        +"<br>accuracy: " + position.coords.accuracy;	
+                    }
+                    
+                    
+    </script>
+      	
+</html>

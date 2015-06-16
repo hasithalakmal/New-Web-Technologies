@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Advance Web</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Basic index page for my web assignment" />
+		<meta name="keywords" content="Web Assignment,Advance Web,2012cs077" />
+		<meta name="author" content="Hasitha lakmal" />
+	    <link rel="shortcut icon" href="images/logo1.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/BGStyle.css" />
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<header>
+                <img class="sitelogo1" src="images/logo.png" alt="no image" />	
+                <img class="sitelogo2" src="images/logo.png" alt="no image" />	
+				<h1><span>Crazy Cars</span> collection</h1>   		
+				<h2>Hasitha Lakmal Gamage</h2>
+               
+			<nav class="Menu1">
+                      <hr />
+					<a href="index.html">Home</a>
+					<a href="AboutUS.html">About Us</a>
+					<a href="LocationUs.html">Location</a>
+                    <a href="CarGalery.html">Vedio Galery</a>
+                    <a href="CarSerch.html">Serch</a>
+                    <a href="SignUp.html">Sign Up</a>
+                    <a class="Current-Menu1" href="Login.html">Sign In</a>
+                     <hr />
+				</nav>
+			</header>
+            
+            <h2 id="welcome_user">Hello User!!!</h2>
+           
+           <div id="logindiv">
+           <section id="loginForm">
+               <div><h2>Enter your use name and password</h2></div>
+               <form>
+                <table align="center">
+                    <tr>
+                        <td>User Name</td>
+                        <td><input type="text" id="un" name="UserName1" placeholder="Enter your user name" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="pw" name="UserPassword1" placeholder="Enter your password" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Sign In" onclick="isValidLogin();"/></td>
+                    </tr>
+                </table>
+               </form>
+           </section>
+           <section id="logout">
+                <div><h2>click heare to logout.</h2></div>
+                <button onclick="logout();">Sign Out</button>
+           </section>
+			
+		</div>
+        <section>
+        
+        </section>
+           
+          </div>  
+        <footer>
+                Gamage Hasitha Lakmal @Advance_Web_Development-2015
+        </footer>
+         
+    </body>
+   
+	<script>
+        function allLetter()
+          { 
+              var inputtxt = document.getElementById("un");
+              var output =document.getElementById("welcome_user");
+              var letters = /^[A-Za-z]+$/;
+              if(inputtxt.value.match(letters))
+              {
+                  
+                  return true;
+              }
+              else
+              {
+                  alert('Please input "User Name" correctly');
+                  return false;
+              }
+          }
+          
+          function isValidLogin(){
+            //alert('possition 1');
+            var username = document.getElementById("un");
+            var password = document.getElementById("pw");
+            var bool1= allLetter();
+            //alert(bool1.valueOf());
+            if(bool1.valueOf()){
+                //alert('possition 2');
+                if('123' == '123'){
+                  //  alert('possition 4');
+                    sessionStorage.username = username.value;
+                    
+                    alert('welcome '+sessionStorage.username);
+                    
+                }else{
+                   // alert('possition 5');
+                    alert("incorrect user name and passwords.");
+                }
+            }else{
+                //alert('possition 3');
+                return false;
+            }
+          }
+          
+          function logout(){
+            sessionStorage.clear();
+            output.innerHTML = 'Thanks for login';
+            document.getElementById("loginForm").style.display = 'normel';
+            document.getElementById("logout").style.display = 'none';
+            
+          }
+
+    </script>
+    <script type="text/javascript">
+		var output =document.getElementById("welcome_user");
+         if( sessionStorage.username ){
+            output.innerHTML = 'You are welcome to the crazy car ....  ' + sessionStorage.username;
+            document.getElementById("loginForm").style.display = 'none';
+            document.getElementById("logout").style.display = 'normel';
+            document.getElementById("logintab").innerhtml="Sign Out";
+         }else{
+           output.innerHTML = 'Hello User!!!';
+           document.getElementById("logout").style.display = 'none';
+           document.getElementById("loginForm").style.display = 'normel';
+           document.getElementById("logintab").innerhtml="Sign In";
+         }
+        
+      </script>
+    
+    
+</html>

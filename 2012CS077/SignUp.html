@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Advance Web</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Basic index page for my web assignment" />
+		<meta name="keywords" content="Web Assignment,Advance Web,2012cs077" />
+		<meta name="author" content="Hasitha lakmal" />
+	    <link rel="shortcut icon" href="images/logo1.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/BGStyle.css" />
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<header>
+                <img class="sitelogo1" src="images/logo.png" alt="no image" />	
+                <img class="sitelogo2" src="images/logo.png" alt="no image" />	
+				<h1><span>Crazy Cars</span> collection</h1>   		
+				<h2>Hasitha Lakmal Gamage</h2>
+			<nav class="Menu1">
+                      <hr />
+					<a href="index.html">Home</a>
+					<a href="AboutUS.html">About Us</a>
+					<a href="LocationUs.html">Location</a>
+                    <a href="CarGalery.html">Vedio Galery</a>
+                    <a href="CarSerch.html">Serch</a>
+                    <a class="Current-Menu1"  href="SignUp.html">Sign Up</a>
+                    <a href="Login.html">Sign In</a>
+                     <hr />
+				</nav>
+			</header>
+           
+           <article>
+                <section>
+                    <h1 style="text-align: center;">Complete Theese Forms</h1>
+                    <div style="background-color: yellow; height: 900px; width: 80%; text-align:center; margin: 0 auto;">
+                        <br />
+                        <h3 style="color: black;">This ia a registation form for get user details.</h3>
+                        <hr />
+                        <p style="color: red; padding: 10px; margin: 10px;">Password should have more than 8 characters with Number, Uppercase letter, Lowercase letter, Special Character.</p>
+                        <hr />
+                        <form onsubmit="return formSubmit();" oninput="welcomeUser.value = 'You are welcome '+title.value +' '+fullName.value ">
+                            <table style="color: black; text-align: left;" >
+                                <tr>
+                                    <td>Title</td>
+                                    <td>
+                                      <select name="title" id="title">
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Miss.">Miss.</option>
+                                        <option value="Dr.">Dr.</option>
+                                      </select>
+                                    </td>
+                                    <td id="title_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Full Name<span style="color: red;">*</span></td>
+                                    <td><input type="text" oninput="username.value= fullName.value+2015; username_validation.value='Your User name is  '+fullName.value+2015"  name="fullName" id="fullName" pattern="[a-zA-Z ]*$" placeholder="Enter Your name" autofocus="" required="" tabindex="1"/></td>
+                                    <td id="fullName_validation"><output style="color: blue;" name="welcomeUser" id="welcomeUser" for="title fullName"></output></td>
+                                </tr>
+                                <tr>
+                                    <td>User Name<span style="color: red;">*</span></td>
+                                    <td><input type="text" name="username" placeholder="We provide this for you" disabled="" readonly="" /></td>
+                                    <td><output id="username_validation" style="color: green;" name="username_validation"></output></td>
+                                </tr>
+                                <tr>
+                                    <td>Password<span style="color: red;">*</span></td>
+                                    <td><input type="password" id="userpassword1" name="userpassword1" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter Password" required="" tabindex="2"/></td>
+                                    <td id="userpassword_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Password<span style="color: red;">*</span></td>
+                                    <td><input type="password" oninput="chekpasswordeql();" id="userpassword2" name="userpassword2" placeholder="Re Enter Password" required=""  tabindex="3"/></td>
+                                    <td ><output id="userpassword2_validation" name="userpassword2_validation"  ></output></td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>
+                                       Male : <input value="Male" type="radio" name="gender" tabindex="5" checked=""/>
+                                       Frmale : <input value="Female" type="radio" name="gender"/>
+                                    </td>
+                                    <td id="gender_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Likes</td>
+                                    <td>
+                                       Aston-martin : <input value="Aston-martin" type="checkbox" name="likes" tabindex="6"/>
+                                       Audi : <input value="Audi" type="checkbox"  name="likes"/>
+                                       Benz : <input value="Benz" type="checkbox" checked="" name="likes"/>
+                                    </td>
+                                    <td>
+                                        BMW : <input value="BMW" type="checkbox" checked="" name="likes"/>
+                                       Bugatti : <input value="Bugatti" type="checkbox"  name="likes"/>
+                                       Freeari : <input value="Freeari" type="checkbox"  name="likes"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td><input type="date" name="birthday" tabindex="7"/></td>
+                                    <td id="birthday_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Age</td>
+                                    <td><input type="number" name="age" max="120" min="5"  tabindex="8"/></td>
+                                    <td id="age_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Crazy Level</td>
+                                    <td><input type="range" name="crazylevel" max="100" min="0" tabindex="9"/></td>
+                                    <td id="crazylevel_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail<span style="color: red;">*</span></td>
+                                    <td><input  type="email" name="email" placeholder="youremail@domain.com" tabindex="10" required=""/></td>
+                                    <td id="email_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td>Your website</td>
+                                    <td><input type="url" name="web" placeholder="www.you.com" tabindex="4" /></td>
+                                    <td id="web_validation"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="reset" value="Reset All" tabindex="12"/></td>
+                                    <td><input type="submit" tabindex="4" tabindex="11"/></td>
+                                    <td id="web_validation"></td>
+                                </tr>
+                            </table>
+                        </form>
+                        <hr/><hr /><hr />
+                        <br />
+                        <h3 style="color: black;">This ia a test for humen- keycapture</h3>
+                        <hr />
+                        <p style="color: red; padding: 10px; margin: 10px;">drag box 1 on to box 2</p>
+                        <hr />
+                        <div id="boxA" draggable="true" ondragstart="return dragStart(event)">1
+                        </div>
+                        <div id="boxC">
+                            <div id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">2</div>
+                        </div>
+                        <div ><p style="color: red;" id="userDetails"></p></div>
+                        
+                     </div>
+                
+                </section>
+           </article>
+           
+			
+		
+            
+          </div>  
+        <footer>
+                Gamage Hasitha Lakmal @Advance_Web_Development-2015
+        </footer>
+         
+    </body>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        function chekpasswordeql(){
+            var p1 = document.getElementById("userpassword1");
+            var p2 = document.getElementById("userpassword2");
+            var output=document.getElementById("userpassword2_validation");
+            if (p1.value == p2.value) {
+                output.style.color='green';
+                output.value="Your password is match";
+            } else {
+                output.style.color='red';
+                output.value="your password is not match";
+            }
+        }
+        
+        function formSubmit(){
+            var p1 = document.getElementById("userpassword1");
+            var p2 = document.getElementById("userpassword2");
+            var output=document.getElementById("submitionstste");
+            if (p1.value == p2.value) {
+                alert("submited");
+                return true;
+            } else {
+                alert("Not submit - Passwoeds are not match");
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function dragStart(ev) {
+           ev.dataTransfer.effectAllowed='move';
+           ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+           ev.dataTransfer.setDragImage(ev.target,0,0);
+           $("#userDetails").html('You are not a Humen!!!');
+           return true;
+        }
+        function dragEnter(ev) {
+           event.preventDefault();
+           return true;
+        }
+        function dragOver(ev) {
+            return false;
+        }
+        function dragDrop(ev) {
+           var src = ev.dataTransfer.getData("Text");
+           ev.target.appendChild(document.getElementById(src));
+           ev.stopPropagation();
+           $("#userDetails").html('Welcome Humen!!!');
+           alert("Congraulation!!! - you are a humen");
+           return false;
+        }
+    </script>
+</html>

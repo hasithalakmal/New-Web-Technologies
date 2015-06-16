@@ -1,0 +1,456 @@
+body{
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	background:  url(../images/bgimage.jpg) repeat top left;
+	font-weight: 800;
+	font-size: 15px;
+	color: #333;
+	margin:0px;
+    padding:20px;
+}
+a{
+	text-decoration: none;
+}
+p{
+    font-weight: 200;
+	font-size: 15px;
+    color: #FFF;
+    text-align: justify;
+    padding: 20px,20px,20px,20px;
+}
+
+article{
+    font-weight: 200;
+	font-size: 15px;
+    color: #FFF;
+    padding: 20px,20px,20px,20px;
+}
+
+footer{
+    font-weight: 100;
+	font-size: 13px;
+    text-align: center;
+    color: #FFF;
+    background-color: red;
+    height: 30px;
+    margin:0;
+    
+}
+
+.container{
+	width: 100%;
+	position: relative;
+    margin:10px;
+    padding: 0
+}
+
+.main{
+	width: 1000px;
+	height: 500px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+.container > header{
+	margin: 10px;
+	padding: 20px 10px 10px 10px;
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.container > header h1{
+	font-size: 50px;
+	line-height: 36px;
+	margin: 0;
+	position: relative;
+	font-weight: 500;
+	color: #F2E714;
+	text-shadow: 10px 10px 10px rgba(250, 6, 6, 0.7);
+}
+.container > header h1 span{
+	font-weight: 700;
+    color: #5DF214;
+	text-shadow: 20px 20px 20px rgba(250, 6, 6, 0.7);
+    
+}
+.container > header h2{
+	font-size: 30px;
+	font-weight: 300;
+	margin: 0;
+	padding: 15px 0 5px 0;
+	color: #0EE4F5;
+	font-family: Cambria, Georgia, serif;
+	font-style: italic;
+	text-shadow: 5px 5px 5px rgba(14, 16, 239, 0.9);
+}
+
+/* Buttons Style */
+.Menu1{
+    text-align:center;
+	display: block;
+	line-height: 30px;
+	padding: 5px 0px;
+}
+.Menu1 a{
+    display: inline-block;
+	margin: 0px 4px;
+	padding: 0px 6px;
+	color: #000;
+	line-height: 20px;	
+	font-size: 13px;
+	border: 3px solid #fff;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.Menu1 a:hover{
+	color: #FDFCFC;
+	background: #E22727;
+    box-shadow: 10px 10px 10px rgba(255,255,255,0.7);
+}
+.Menu1 a:active{
+    color: #1453F4;
+	background: #F7FD0A;
+    box-shadow: 10px 10px 10px rgba(255,255,255,0.7);
+}
+
+.Menu1 a.Current-Menu1:hover{
+	background: #1BF7F7;
+	border-color:#085CF4;
+	color: #333;
+	box-shadow: 10px 10px 10px rgba(255,255,255,0.7);
+	
+}
+.support-note span{
+	color: #ac375d;
+	font-size: 16px;
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0;
+}
+
+.sitelogo1{
+    width: 110px;
+    float: left;
+}
+.sitelogo2{
+     width: 110px;
+     float: right;
+     -webkit-filter: sepia(1);
+     filter: sepia(100%);
+}
+
+.three-colmn{
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+    
+    -webkit-column-rule: 5px solid lightblue; /* Chrome, Safari, Opera */
+    -moz-column-rule: 5px solid lightblue; /* Firefox */
+    column-rule: 5px solid lightblue;
+}
+
+.article1{
+    padding: 20px,20px,20px,20px;
+}
+.carsection{
+    background-color: lightblue;
+}
+.carheder{
+    background-color: greenyellow;
+    color: black;
+    text-align: center;
+}
+.cardiv, .cardiscription{
+    width: 100%;
+}
+.carimg{
+    width: 100%;
+	height: 300px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.cardiscription{
+    width: 80%;
+    color: black;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+}
+.topic{
+    background-color: whitesmoke ;
+    color: black;
+    text-align: center;
+}
+.discription{
+    background-color: lightgoldenrodyellow;
+    color: black;
+    padding: 10px 10px 10px 10px;
+}
+.discription p{
+    color: black;
+}
+
+.utvediocurr{
+    width: 100% ;
+    height: 350px;
+    
+}
+
+/* Slide show */
+#slideshow #slideshowWindow {
+	width:800px;
+	height:400px;
+	margin:0;
+	padding:0;
+	position:relative;
+	overflow:hidden;
+}
+
+#slideshow #slideshowWindow .slide {
+	margin:0;
+	padding:0;
+	width:800px; 
+	height:400px;
+	float:left;
+	position:relative;
+}
+
+#welcome_user {
+    color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+#logout{
+   text-align:center;
+ 
+}
+#loginForm{
+    text-align:center;
+}
+#logindiv{
+    width: 60%;
+    background-color: yellow;
+    text-align:center;
+    margin: 0 auto;
+}
+#map-canvas,#map-canvas2{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+}
+#boxA, #boxB, #boxC {
+   float:left;padding:10px;margin:10px;-moz-user-select:none;
+}
+#boxA { background-color: #6633FF; width:40px; height:40px;  }
+#boxB { background-color: #6633FF; width:40px; height:40px; }
+#boxC { background-color: #FF6699; width:100px; height:100px; }
+
+#AustingMarting_img{ 
+	background-image: url('../images/Cars/aston-martin-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/aston-martin-2.jpg') 1x, url('../images/Mobile-Car/aston-martin-3.jpg') 2x);
+}
+#Audi_img{ 
+	background-image: url('../images/Cars/audi-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/audi-2.jpg') 1x, url('../images/Mobile-Car/audi-3.jpg') 2x);
+}
+#Benz_img{ 
+	background-image: url('../images/Cars/benz-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/benz-2.jpg') 1x, url('../images/Mobile-Car/benz-3.jpg') 2x);
+}
+#BMW_img{ 
+	background-image: url('../images/Cars/bmw-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/bmw-2.jpg') 1x, url('../images/Mobile-Car/bmw-3.jpg') 2x);
+}
+#Bugatti_img{ 
+	background-image: url('../images/Cars/bugatti-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/bugatti-2.jpg') 1x, url('../images/Mobile-Car/bugatti-3.jpg') 2x);
+}
+#Ferari_img{ 
+	background-image: url('../images/Cars/freeari-1.jpg'); 
+	background-image: -webkit-image-set(url('../images/Cars/freeari-2.jpg') 1x, url('../images/Mobile-Car/freeari-3.jpg') 2x);
+}
+/*abut us*/
+#slideshows {
+    height:400px;
+    
+}
+#slideshows div {
+    position:absolute;
+    z-index: 0;
+}
+#slideshows div.previous {
+    z-index: 1;
+}
+#slideshows div.current {
+    z-index: 2;
+}
+
+
+
+/*Media Queries */
+
+
+@media (max-width:480px){
+    hr{display:none}
+    .carsection{background-color: lightyellow;}
+    .sitelogo2{display:none}
+    .sitelogo1{float: none;}
+    .Menu1 a{width: 100%;}
+    #tabset{display:none;}
+    #slideshows{display:none;}
+    #timer{display:none;}
+    
+    
+}
+
+/* Bill */
+#services{
+    list-style:none;
+    margin:0 auto;
+    width:600px;
+}
+ 
+#services li{
+    background-color: #fbfbfc;
+    box-shadow:0 1px 1px #eee;
+    font-size:22px;
+    color: #85898b;
+    margin-bottom:15px;
+    border-radius:4px;
+}
+ 
+#services li span{
+    float:right;
+    opacity:0.6;
+}
+
+#services li label{
+    display:block;
+    cursor:pointer;
+    padding:22px 30px;
+}
+
+#services li input[type=checkbox]{
+    border:1px solid #ccc;
+    box-shadow:1px 1px 1px #ccc;
+    margin-right:10px;
+    width:16px;
+    height:16px;
+    display:inline-block;
+    vertical-align: middle;
+}
+ 
+#total{
+    font-size:24px;
+    text-align:right;
+    width:570px;
+    margin:30px auto 0;
+    padding-right:30px;
+}
+ 
+#total span{
+    display:inline-block;
+    min-width:70px;
+}
+ 
+ 
+#order{
+    font:inherit;
+    font-size:24px;
+    cursor:pointer;
+    border:none;
+    display:block;
+    background-color:#89bde5;
+    color:#fff;
+    text-transform:uppercase;
+    width:200px;
+    margin:80px auto 0;
+    text-align:center;
+    padding:22px 0;
+    border-radius: 3px;
+    box-shadow:0 1px 1px #ddd, 0 0 20px #84b8e0 inset;
+}
+ 
+#order:hover{
+    opacity: 0.9;
+}
+/* Serch */
+.bar{
+	background-color:#5c9bb7;
+
+	background-image:-webkit-linear-gradient(top, #5c9bb7, #5392ad);
+	background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
+	background-image:linear-gradient(top, #5c9bb7, #5392ad);
+
+	box-shadow: 0 1px 1px #ccc;
+	border-radius: 2px;
+	width: 400px;
+	padding: 14px;
+	margin: 60px auto 20px;
+	position:relative;
+}
+
+.bar input{
+	border: none;
+	width: 100%;
+	line-height: 19px;
+	padding: 11px 0;
+
+	border-radius: 2px;
+	box-shadow: 0 2px 8px #c4c4c4 inset;
+	text-align: left;
+	font-size: 14px;
+	font-family: inherit;
+	color: #738289;
+	font-weight: bold;
+	outline: none;
+	text-indent: 40px;
+}
+
+ul{
+	list-style: none;
+	width: 428px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+ul li{
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	overflow: hidden;
+}
+
+ul li img{
+	width:200px;
+	height:100px;
+	float:left;
+	border:none;
+}
+
+ul li p{
+	margin-left: 210px;
+	font-weight: bold;
+	padding-top: 0px;
+    padding-bottom: 0px;
+	color:#6e7a7f;
+}
+ul li h2{
+    margin-left: 210px;
+	font-weight: bold;
+	padding-top: 0px;
+    padding-bottom: 0px;
+	color:yellow;
+}

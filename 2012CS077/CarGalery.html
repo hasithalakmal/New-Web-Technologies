@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Advance Web</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Basic index page for my web assignment" />
+		<meta name="keywords" content="Web Assignment,Advance Web,2012cs077" />
+		<meta name="author" content="Hasitha lakmal" />
+	    <link rel="shortcut icon" href="images/logo1.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/BGStyle.css" />
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<header>
+                <img class="sitelogo1" src="images/logo.png" alt="no image" />	
+                <img class="sitelogo2" src="images/logo.png" alt="no image" />	
+				<h1><span>Crazy Cars</span> collection</h1>   		
+				<h2>Hasitha Lakmal Gamage</h2>
+		      <nav class="Menu1">
+                      <hr />
+					<a  href="index.html">Home</a>
+					<a href="AboutUS.html">About Us</a>
+					<a href="LocationUs.html">Location</a>
+
+                    <a class="Current-Menu1" href="CarGalery.html">Vedio Galery</a>
+                    <a href="CarSerch.html">Serch</a>
+
+                    <a href="SignUp.html">Sign Up</a>
+                    <a href="Login.html">Sign In</a>
+                     <hr />
+				</nav>
+			</header>
+           
+           <section>
+                <div id="slideshow">
+                    <video width="100%" controls >
+                      <source src="videos/carV1.mp4" type="video/mp4"/>
+                     <source src="videos/carV1.flv" type="video/flv"/>
+                     <source src="videos/carV1.3gp" type="video/3gp"/>
+                      Your browser does not support HTML5 video.
+                    </video>
+                </div><!--/slideshow-->
+           </section>
+			
+		
+            <section>
+                <div>
+                    <canvas id="myCanvas1" width="200px" height="100px" style="border:5px solid yellowgreen;">Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+                <object  class="utvediocurr"  data="https://www.youtube.com/v/piyECZa_kX8"></object>         
+            </section>
+            <section>
+                <div>
+                    <canvas id="myCanvas2" width="200px" height="100px" >Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+                <embed class="utvediocurr"  src="https://www.youtube.com/v/2kLlmxUAB5A" />          
+            </section>
+            <section>
+                <div>
+                    <svg height="130" width="500">
+                      <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style="stop-color:blue;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:yellow;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                      <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                      <text fill="#ffffff" font-size="28" font-family="Verdana" x="50" y="80">Iframe</text>
+                    Sorry, your browser does not support inline SVG.
+                    </svg>
+                </div>
+                <iframe class="utvediocurr" src="https://www.youtube.com/embed/3MDTcXGsjuo" frameborder="0" allowfullscreen></iframe>
+            </section>
+          </div>  
+        <footer>
+                Gamage Hasitha Lakmal @Advance_Web_Development-2015
+        </footer>
+         
+    </body>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function() {
+                $(".utvedio").click(function(){
+                    alert("hellooo");
+                });
+                
+    	   });
+    </script>
+    <script>
+        var c = document.getElementById("myCanvas1");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "maroon";
+        ctx.fillRect(0,0,200,30);
+        ctx.fillStyle = "silver";
+        ctx.fillRect(0,30,200,70);
+        ctx.fillStyle = "maroon";
+        ctx.fillRect(0,70,200,100);
+        ctx.fillStyle = "blue";
+        ctx.font = "30px Arial";
+        ctx.fillText("Object Tag",20,60);
+    </script>
+    <script>
+        var c = document.getElementById("myCanvas2");
+        var ctx = c.getContext("2d");
+        var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0,0,200,100);
+        ctx.font = "27px Arial";
+        ctx.strokeText("Embed Tag",20,60);
+    </script>	
+</html>
